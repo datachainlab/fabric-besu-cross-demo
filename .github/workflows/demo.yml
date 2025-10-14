@@ -4,7 +4,7 @@ on: [push, pull_request]
 jobs:
   demo:
     name: demo
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Set up Go 1.16
         uses: actions/setup-go@v1
@@ -48,7 +48,7 @@ jobs:
           make demo
   unit-test:
     name: unit-test
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Set up Go 1.16
         uses: actions/setup-go@v2
