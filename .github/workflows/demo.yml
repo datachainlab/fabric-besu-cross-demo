@@ -4,7 +4,7 @@ on: [push, pull_request]
 jobs:
   demo:
     name: demo
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Set up Go 1.16
         uses: actions/setup-go@v1
@@ -16,7 +16,7 @@ jobs:
           node-version: '12'
       - uses: actions/checkout@v2
       - name: Cache go modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: |
             ~/.cache/go-build
@@ -25,7 +25,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-go-
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         env:
           cache-name: cache-node-modules
         with:
@@ -48,7 +48,7 @@ jobs:
           make demo
   unit-test:
     name: unit-test
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Set up Go 1.16
         uses: actions/setup-go@v2
@@ -56,7 +56,7 @@ jobs:
           go-version: 1.16
       - uses: actions/checkout@v2
       - name: Cache go modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: |
             ~/.cache/go-build

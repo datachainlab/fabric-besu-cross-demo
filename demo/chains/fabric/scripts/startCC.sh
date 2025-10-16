@@ -12,4 +12,4 @@ set -x
 CHAINCODE_CCID_PLATFORMER=${CHAINCODE_CCID_PLATFORMER} \
 CHAINCODE_CCID_ORGA=${CHAINCODE_CCID_ORGA} \
 CHAINCODE_CCID_ORGB=${CHAINCODE_CCID_ORGB} \
-docker-compose -f docker-compose-chaincode.yaml up -d \
+docker compose -f docker-compose-chaincode.yaml up -d \
